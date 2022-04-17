@@ -4,7 +4,9 @@ const path=require("path");
 const cheerio=require("cheerio");
 const request=require("request");
 const AlltopicObj=require("./getAlltopics");
+//creating "gittopic" folder
 let Gittopicspath=path.join(__dirname,"github_topic");
+//if github folder does not exist then only create else 
 if(!fs.existsSync(Gittopicspath)){
     fs.mkdirSync(Gittopicspath);
 }
@@ -27,6 +29,7 @@ function urlHandler(html){
 
         let topicRelativeLinkArr=selecTool(anchorTopicElemArr[i]).attr("href");
         //console.log(topicRelativeLinkArr);
+        //passing the links of (3D,Ajax,Algorithm)
         let fullLink="https://github.com"+topicRelativeLinkArr;
        // console.log(fullLink);
         AlltopicObj.getAllTopic(fullLink);

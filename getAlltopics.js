@@ -3,7 +3,6 @@ const path=require("path");
 const cheerio=require("cheerio");
 const request=require("request");
 const IssueObj=require("./issue");
-const { dirname } = require("path");
 function getAllTopic(url){
        //console.log(url);
        let tn=path.basename(url);
